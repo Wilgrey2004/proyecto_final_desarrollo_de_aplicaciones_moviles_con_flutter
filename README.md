@@ -4,13 +4,30 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### necesitas intalar todas estas dependencias antes de empezar.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub add http
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```bash
+flutter pub add provider
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub add flutter_map
+```
+
+```bash
+flutter pub add shared_preferences
+```
+
+```bash
+flutter pub add image_picker
+```
+
+# luego al final de todo has un fluuter pub get para cargar todas las referencias juntas
+
+```bash
+flutter pub get
+```
