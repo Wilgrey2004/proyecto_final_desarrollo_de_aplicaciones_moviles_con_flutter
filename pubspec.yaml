@@ -21,6 +21,7 @@ dependencies:
   flutter_map: ^8.2.1
   shared_preferences: ^2.5.3
   image_picker: ^1.2.0
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:

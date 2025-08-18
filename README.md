@@ -26,6 +26,10 @@ flutter pub add shared_preferences
 flutter pub add image_picker
 ```
 
+```bash
+flutter pub add carousel_slider
+```
+
 # luego al final de todo has un fluuter pub get para cargar todas las referencias juntas
 
 ```bash
