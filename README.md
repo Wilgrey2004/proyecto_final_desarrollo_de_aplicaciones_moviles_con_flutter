@@ -29,7 +29,12 @@ flutter pub add image_picker
 ```bash
 flutter pub add carousel_slider
 ```
+```bash
+flutter pub add video_player
+```
 
+
+ 
 # luego al final de todo has un fluuter pub get para cargar todas las referencias juntas
 
 ```bash
