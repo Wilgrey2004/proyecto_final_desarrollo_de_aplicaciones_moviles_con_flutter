@@ -1,7 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isAndroid) {
+    InAppWebViewController.setWebContentsDebuggingEnabled(true);
+  }
   runApp(const MyApp());
 }
 
@@ -40,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
   //deben de agregar sus widget aqui y luego agregarles un icono en el mismo orden.
   final List<Widget> _pages = [
     HomeScreen(),
-    const Center(child: Text('Lista')),
+    AboutUsScreen(),
     const Center(child: Text('Acerca')),
   ];
 
@@ -59,8 +68,8 @@ class _MainScreenState extends State<MainScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inicio"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: "lista y registro",
+            icon: Icon(Icons.more_sharp),
+            label: "Sobre nosotros",
           ),
           BottomNavigationBarItem(icon: Icon(Icons.people), label: "acerca de"),
         ],
