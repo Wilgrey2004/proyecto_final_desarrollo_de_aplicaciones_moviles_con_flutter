@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/models/protected_area_model.dart';
 import "../service/protected_area_service.dart";
+import "../screens/protected_areas_map.dart";
 
 class ProtectedAreasScreen extends StatefulWidget {
   const ProtectedAreasScreen({super.key});
@@ -15,11 +16,12 @@ class _ProtectedAreasScreenState extends State<ProtectedAreasScreen> {
   List<ProtectedArea> _filteredAreas = [];
   final TextEditingController _searchController = TextEditingController();
   String _selectedTipo = '';
+  bool showMap = false; // Alterna entre lista y mapa
 
   // Imagen por defecto
   final String defaultImage = 'assets/default_area.jpg';
 
-  // Mapa de imágenes - usa nombres que coincidan EXACTAMENTE con los del API
+  // Mapa de imágenes
   final Map<String, String> localImages = {
     'Boca Chica': 'assets/boca_chica.jpg',
     'Dunas de Bani': 'assets/dunas_bani.jpg',
@@ -53,7 +55,6 @@ class _ProtectedAreasScreenState extends State<ProtectedAreasScreen> {
     areasFuture
         .then((list) {
           _allAreas = list.map((area) {
-            // Busca la imagen correspondiente o usa la por defecto
             String imgPath = defaultImage;
             localImages.forEach((key, value) {
               if (area.nombre.contains(key)) {
@@ -115,35 +116,38 @@ class _ProtectedAreasScreenState extends State<ProtectedAreasScreen> {
   }
 
   Widget _buildImage(String path, {double width = 60, double height = 60}) {
-    try {
-      return Image.asset(
-        path,
-        width: width,
-        height: height,
-        fit: BoxFit.cover,
-        errorBuilder: (context, error, stackTrace) {
-          return Image.asset(
-            defaultImage,
-            width: width,
-            height: height,
-            fit: BoxFit.cover,
-          );
-        },
-      );
-    } catch (e) {
-      return Image.asset(
-        defaultImage,
-        width: width,
-        height: height,
-        fit: BoxFit.cover,
-      );
-    }
+    return Image.asset(
+      path,
+      width: width,
+      height: height,
+      fit: BoxFit.cover,
+      errorBuilder: (context, error, stackTrace) {
+        return Image.asset(
+          defaultImage,
+          width: width,
+          height: height,
+          fit: BoxFit.cover,
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Áreas Protegidas")),
+      appBar: AppBar(
+        title: const Text("Áreas Protegidas"),
+        actions: [
+          IconButton(
+            icon: Icon(showMap ? Icons.list : Icons.map),
+            onPressed: () {
+              setState(() {
+                showMap = !showMap;
+              });
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           // Filtro por tipo
@@ -187,9 +191,11 @@ class _ProtectedAreasScreenState extends State<ProtectedAreasScreen> {
               onChanged: _filterAreas,
             ),
           ),
-          // Listado de áreas
+          // Lista o Mapa
           Expanded(
-            child: _allAreas.isEmpty
+            child: showMap
+                ? ProtectedAreasMapScreen(areas: _filteredAreas)
+                : _allAreas.isEmpty
                 ? const Center(child: CircularProgressIndicator())
                 : _filteredAreas.isEmpty
                 ? const Center(child: Text('No se encontraron áreas'))
