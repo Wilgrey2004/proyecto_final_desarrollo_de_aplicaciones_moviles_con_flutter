@@ -34,8 +34,21 @@ flutter pub add video_player
 ```
 
 
+
+#por si acaso el proyecto no compila o alguna pantalla se queda conjelada hagan un 
+
+```bash
+flutter clean
+```
+#y luego un
+
+```bash
+flutter pub get
+```
  
 # luego al final de todo has un fluuter pub get para cargar todas las referencias juntas
+
+
 
 ```bash
 flutter pub get
