@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
+import 'package:proyecto_final/screens/protected_areas_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,6 +43,7 @@ class _MainScreenState extends State<MainScreen> {
     HomeScreen(),
     const Center(child: Text('Lista')),
     const Center(child: Text('Acerca')),
+    const ProtectedAreasScreen(),
   ];
 
   @override
@@ -49,20 +51,17 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: _pages[_currentIndex], // Cambia el contenido según el índice
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // <- importante
         currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        // el icono se agrega aqui en el mismo orden que en la lista
+        onTap: (index) => setState(() => _currentIndex = index),
+        backgroundColor: Colors.blueGrey,
+        selectedItemColor: Colors.green,
+        unselectedItemColor: Colors.white,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inicio"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: "lista y registro",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: "acerca de"),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Lista"),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Acerca"),
+          BottomNavigationBarItem(icon: Icon(Icons.nature), label: "Áreas"),
         ],
       ),
     );
