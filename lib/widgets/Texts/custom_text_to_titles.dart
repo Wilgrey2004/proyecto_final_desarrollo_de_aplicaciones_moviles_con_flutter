@@ -12,7 +12,7 @@ class CustomTextToTitles extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Center(
           child: Text(
-            "$title",
+            title,
             style: TextStyle(fontSize: 20, color: Colors.white),
           ),
         ),
