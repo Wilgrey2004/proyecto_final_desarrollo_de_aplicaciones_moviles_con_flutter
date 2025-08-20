@@ -35,12 +35,12 @@ flutter pub add video_player
 
 
 
-#por si acaso el proyecto no compila o alguna pantalla se queda conjelada hagan un 
+# por si acaso el proyecto no compila o alguna pantalla se queda conjelada hagan un 
 
 ```bash
 flutter clean
 ```
-#y luego un
+# y luego un
 
 ```bash
 flutter pub get
