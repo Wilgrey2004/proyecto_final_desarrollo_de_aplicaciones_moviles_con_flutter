@@ -1,8 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
 import 'package:proyecto_final/screens/protected_areas_screen.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
+
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isAndroid) {
+    InAppWebViewController.setWebContentsDebuggingEnabled(true);
+  }
   runApp(const MyApp());
 }
 
@@ -41,9 +52,10 @@ class _MainScreenState extends State<MainScreen> {
   //deben de agregar sus widget aqui y luego agregarles un icono en el mismo orden.
   final List<Widget> _pages = [
     HomeScreen(),
-    const Center(child: Text('Lista')),
-    const Center(child: Text('Acerca')),
-    const ProtectedAreasScreen(),
+    AboutUsScreen(),
+    MedidasAmbientalesScreen(),
+    ProtectedAreasScreen(),
+
   ];
 
   @override
@@ -59,9 +71,21 @@ class _MainScreenState extends State<MainScreen> {
         unselectedItemColor: Colors.white,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Inicio"),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Lista"),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: "Acerca"),
-          BottomNavigationBarItem(icon: Icon(Icons.nature), label: "Áreas"),
+
+          
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.more_sharp),
+            label: "Sobre nosotros",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.warning),
+            label: "Medidas medio ambientales",
+          ),
+          
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Areas protegidas"),
+
+
         ],
       ),
     );
