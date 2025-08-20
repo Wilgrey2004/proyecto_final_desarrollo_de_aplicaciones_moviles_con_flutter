@@ -5,6 +5,7 @@ import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _pages = [
     HomeScreen(),
     AboutUsScreen(),
-    const Center(child: Text('Acerca')),
+    MedidasAmbientalesScreen(),
   ];
 
   @override
@@ -71,7 +72,10 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.more_sharp),
             label: "Sobre nosotros",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.people), label: "acerca de"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.warning),
+            label: "Medidas medio ambientales",
+          ),
         ],
       ),
     );
