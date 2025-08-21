@@ -13,16 +13,18 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   http: ^1.5.0
-  provider: ^6.1.5+1
+  provider: ^6.1.2
   flutter_map: ^8.2.1
   shared_preferences: ^2.5.3
   image_picker: ^1.2.0
   carousel_slider: ^5.1.1
-  latlong2: 0.9.1
+  latlong2: ^0.9.1
   video_player: ^2.10.0
   youtube_player_flutter: ^9.1.2
+  # flutter_inappwebview: ^6.0.0
   chewie: ^1.7.5
   cached_network_image: ^3.4.1
+
 
 
 dev_dependencies:
@@ -33,14 +35,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/boca_chica.jpg
-    - assets/dunas_bani.jpg
-    - assets/ebano_verde.jpg
-    - assets/laguna_cabral.jpg
-    - assets/loma_quita_espuela.jpg
-    - assets/PN_haitises.jpg
-    - assets/PN_jaragua.png
-    - assets/reserva_valleNuevo.jpg
-    - assets/santuario_mamiferos_blancos.jpg
-    - assets/sierra_bahoruco.jpg
-    - assets/default_area.jpg
+    - "assets/boca_chica.jpg"
+    - "assets/dunas_bani.jpg"
+    - "assets/ebano_verde.jpg"
+    - "assets/laguna_cabral.jpg"
+    - "assets/loma_quita_espuela.jpg"
+    - "assets/PN_haitises.jpg"
+    - "assets/PN_jaragua.png"
+    - "assets/reserva_valleNuevo.jpg"
+    - "assets/santuario_mamiferos_blancos.jpg"
+    - "assets/sierra_bahoruco.jpg"
+    - "assets/default_area.jpg"
