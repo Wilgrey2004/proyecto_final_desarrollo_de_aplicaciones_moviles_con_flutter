@@ -1,10 +1,11 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
+import 'package:proyecto_final/screens/equipo_screen/equipo_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
 import 'package:proyecto_final/screens/protected_areas_screens/protected_areas_screen.dart';
 import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
-import 'package:proyecto_final/screens/normativas_screen.dart';
+import 'package:proyecto_final/screens/normativas_screen/normativas_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,7 +53,8 @@ class _MainScreenState extends State<MainScreen> {
     const AboutUsScreen(),
     const MedidasAmbientalesScreen(),
     const ProtectedAreasScreen(),
-    const NormativasScreen(), // <- nuevo
+    const NormativasScreen(),
+    const EquipoScreen(),
   ];
 
   @override
@@ -77,9 +79,11 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.list),
             label: "Áreas protegidas",
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.gavel), label: "Normativas"),
+
           BottomNavigationBarItem(
-            icon: Icon(Icons.gavel), // 👈 icono para normativas
-            label: "Normativas",
+            icon: Icon(Icons.people_alt),
+            label: "Equipo",
           ),
         ],
       ),
