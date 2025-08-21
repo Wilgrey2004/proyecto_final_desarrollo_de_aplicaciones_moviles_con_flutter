@@ -7,6 +7,8 @@ import 'package:proyecto_final/screens/protected_areas_screen.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
+import 'package:proyecto_final/screens/videos/videos_page.dart';
+
 
 
 void main() {
@@ -55,6 +57,7 @@ class _MainScreenState extends State<MainScreen> {
     AboutUsScreen(),
     MedidasAmbientalesScreen(),
     ProtectedAreasScreen(),
+    VideosPage(),
 
   ];
 
@@ -84,6 +87,8 @@ class _MainScreenState extends State<MainScreen> {
           ),
           
           BottomNavigationBarItem(icon: Icon(Icons.list), label: "Areas protegidas"),
+          BottomNavigationBarItem(icon: Icon(Icons.ondemand_video), label: "Videos"),
+
 
 
         ],
