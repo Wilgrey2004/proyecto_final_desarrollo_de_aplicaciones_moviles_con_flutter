@@ -6,6 +6,8 @@ import 'package:proyecto_final/screens/home/home_screen.dart';
 import 'package:proyecto_final/screens/protected_areas_screens/protected_areas_screen.dart';
 import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
 import 'package:proyecto_final/screens/normativas_screen/normativas_screen.dart';
+import 'package:proyecto_final/screens/videos/videos_page.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,6 +49,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
+
   // 👇 Agrega NormativasScreen a la lista de páginas
   final List<Widget> _pages = [
     const HomeScreen(),
@@ -55,6 +58,7 @@ class _MainScreenState extends State<MainScreen> {
     const ProtectedAreasScreen(),
     const NormativasScreen(),
     const EquipoScreen(),
+    const VideosPage(),
   ];
 
   @override
@@ -80,11 +84,11 @@ class _MainScreenState extends State<MainScreen> {
             label: "Áreas protegidas",
           ),
           BottomNavigationBarItem(icon: Icon(Icons.gavel), label: "Normativas"),
-
           BottomNavigationBarItem(
             icon: Icon(Icons.people_alt),
             label: "Equipo",
           ),
+          BottomNavigationBarItem(icon: Icon(Icons.ondemand_video), label: "Videos"),
         ],
       ),
     );
