@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/models/protected_area_model.dart';
-import "../service/protected_area_service.dart";
-import "../screens/protected_areas_map.dart";
+import "../../service/protected_area_service.dart";
+import "protected_areas_map.dart";
 
 class ProtectedAreasScreen extends StatefulWidget {
   const ProtectedAreasScreen({super.key});
@@ -80,6 +80,7 @@ class _ProtectedAreasScreenState extends State<ProtectedAreasScreen> {
           setState(() {});
         })
         .catchError((error) {
+          // ignore: avoid_print
           print('Error loading areas: $error');
         });
   }
