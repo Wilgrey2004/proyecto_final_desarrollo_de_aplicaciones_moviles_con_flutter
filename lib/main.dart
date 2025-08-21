@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
+import 'package:proyecto_final/screens/acerca_de/acerca_de.dart';
 import 'package:proyecto_final/screens/equipo_screen/equipo_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
 import 'package:proyecto_final/screens/protected_areas_screens/protected_areas_screen.dart';
@@ -58,6 +59,7 @@ class _MainScreenState extends State<MainScreen> {
     const EquipoScreen(),
     const VideosPage(),
     const VoluntariadoForm(),
+    const AcercaDeScreen(),
   ];
 
   @override
@@ -95,6 +97,11 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.join_full),
             label: "Voluntariado",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.circle_notifications),
+            label: "Equipo de desarrollo",
           ),
         ],
       ),

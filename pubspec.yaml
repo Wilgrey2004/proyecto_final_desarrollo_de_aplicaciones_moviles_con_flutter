@@ -24,8 +24,7 @@ dependencies:
   # flutter_inappwebview: ^6.0.0
   chewie: ^1.7.5
   cached_network_image: ^3.4.1
-
-
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   flutter_test:
