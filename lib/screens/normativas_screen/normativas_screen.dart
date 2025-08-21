@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/normativa_model.dart';
-import '../service/normativa_service.dart';
+import '../../models/normativa_model.dart';
+import '../../service/normativa_service.dart';
 
 class NormativasScreen extends StatefulWidget {
   const NormativasScreen({super.key});
