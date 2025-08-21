@@ -8,7 +8,6 @@ import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambien
 import 'package:proyecto_final/screens/normativas_screen/normativas_screen.dart';
 import 'package:proyecto_final/screens/videos/videos_page.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isAndroid) {
@@ -49,13 +48,13 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
-
   // 👇 Agrega NormativasScreen a la lista de páginas
   final List<Widget> _pages = [
     const HomeScreen(),
     const AboutUsScreen(),
     const MedidasAmbientalesScreen(),
     const ProtectedAreasScreen(),
+    const NormativasScreen(),
     const NormativasScreen(),
     const EquipoScreen(),
     const VideosPage(),
@@ -88,7 +87,10 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.people_alt),
             label: "Equipo",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.ondemand_video), label: "Videos"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.ondemand_video),
+            label: "Videos",
+          ),
         ],
       ),
     );
