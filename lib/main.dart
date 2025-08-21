@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/about_us/about_us_screen.dart';
 import 'package:proyecto_final/screens/home/home_screen.dart';
 import 'package:proyecto_final/screens/protected_areas_screens/protected_areas_screen.dart';
-// ignore: depend_on_referenced_packages
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
-import 'package:proyecto_final/screens/normativas_screen.dart'; // 👈 importa la screen de normativas
-// import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:proyecto_final/screens/normativas_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,6 +39,7 @@ class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MainScreenState createState() => _MainScreenState();
 }
 
@@ -82,10 +80,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.gavel), // 👈 icono para normativas
             label: "Normativas",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: "Areas protegidas",
           ),
         ],
       ),

@@ -38,6 +38,7 @@ class _NormativasScreenState extends State<NormativasScreen> {
           setState(() {});
         })
         .catchError((error) {
+          // ignore: avoid_print
           print('Error al cargar normativas: $error');
         });
   }
