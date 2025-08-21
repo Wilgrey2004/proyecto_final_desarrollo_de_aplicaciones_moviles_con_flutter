@@ -32,7 +32,7 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
 
   @override
   void dispose() {
-    super.dispose();
-    _controller.dispose();
+    _controller.dispose(); // primero liberar el recurso
+    super.dispose(); // luego llamar al padre
   }
 }
