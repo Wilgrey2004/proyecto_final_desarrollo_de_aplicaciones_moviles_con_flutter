@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-
 class YouTubePlayerWidget extends StatefulWidget {
   const YouTubePlayerWidget({super.key});
 
@@ -33,7 +32,7 @@ class _YouTubePlayerWidgetState extends State<YouTubePlayerWidget> {
 
   @override
   void dispose() {
-    _controller.dispose();
     super.dispose();
+    _controller.dispose();
   }
 }
