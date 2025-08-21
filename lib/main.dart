@@ -7,6 +7,7 @@ import 'package:proyecto_final/screens/protected_areas_screens/protected_areas_s
 import 'package:proyecto_final/screens/medidas_ambientales_screen/medidas_ambientales_screen.dart';
 import 'package:proyecto_final/screens/normativas_screen/normativas_screen.dart';
 import 'package:proyecto_final/screens/videos/videos_page.dart';
+import 'package:proyecto_final/widgets/Formulario_widget_api/formulario_voluntariado.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +49,6 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
-
   final List<Widget> _pages = [
     const HomeScreen(),
     const AboutUsScreen(),
@@ -57,6 +57,7 @@ class _MainScreenState extends State<MainScreen> {
     const NormativasScreen(),
     const EquipoScreen(),
     const VideosPage(),
+    const VoluntariadoForm(),
   ];
 
   @override
@@ -89,6 +90,11 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.ondemand_video),
             label: "Videos",
+          ),
+
+          BottomNavigationBarItem(
+            icon: Icon(Icons.join_full),
+            label: "Voluntariado",
           ),
         ],
       ),
